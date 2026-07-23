@@ -11,6 +11,7 @@ import LoginPage from './pages/LoginPage';
 import AdminLayout from './components/admin/AdminLayout';
 import AdminDashboard from './pages/admin/AdminDashboard';
 import AdminAddPlant from './pages/admin/AdminAddPlant';
+import ProtectedRoute from './components/admin/ProtectedRoute';
 
 function App() {
   const location = useLocation();
@@ -28,10 +29,12 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route index element={<AdminDashboard />} />
-            <Route path="plants/new" element={<AdminAddPlant />} />
-            {/* Add more admin routes here later like /admin/plants */}
+          <Route path="/admin" element={<ProtectedRoute />}>
+            <Route element={<AdminLayout />}>
+              <Route index element={<AdminDashboard />} />
+              <Route path="plants/new" element={<AdminAddPlant />} />
+              {/* Add more admin routes here later like /admin/plants */}
+            </Route>
           </Route>
         </Routes>
       </main>
