@@ -73,7 +73,7 @@ const Navbar = () => {
               <li><Link to="/plants" className={isActive('/plants') ? 'active-link' : ''} onClick={toggleMenu}>Our Plants</Link></li>
               <li><Link to="/about" className={isActive('/about') ? 'active-link' : ''} onClick={toggleMenu}>About Us</Link></li>
 
-              <li><a href="#contact" onClick={toggleMenu}>Contact Us</a></li>
+              <li><Link to="/contact" className={isActive('/contact') ? 'active-link' : ''} onClick={toggleMenu}>Contact Us</Link></li>
             </ul>
 
             {/* Right: Actions */}

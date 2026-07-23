@@ -22,7 +22,7 @@
   border: 1px solid rgba(255, 153, 51, 0.2);
 }
 
-.contact-info {
+.contact-content .contact-info {
   padding: 40px;
   display: flex;
   flex-direction: column;
