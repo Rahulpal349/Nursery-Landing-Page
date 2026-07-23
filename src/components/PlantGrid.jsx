@@ -38,7 +38,6 @@ const PlantGrid = () => {
               <div className="product-details">
                 <div className="product-info">
                   <h3 className="product-name">{plant.name}</h3>
-                  <span className="product-price">{plant.price}</span>
                 </div>
                 <div className="product-actions">
                   <button className="icon-btn cart-btn" aria-label="Add to cart">

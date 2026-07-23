@@ -34,7 +34,6 @@ const ProductRelated = () => {
                 <div className="rel-details">
                   <div className="rel-info">
                     <h3 className="rel-name">{plant.name}</h3>
-                    <span className="rel-price">{plant.price}</span>
                   </div>
                   <div className="rel-actions">
                     <button className="icon-btn">

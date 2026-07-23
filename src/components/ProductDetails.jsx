@@ -75,11 +75,7 @@ const ProductDetails = () => {
             </h1>
             <p className="product-scientific">Sansevieria trifasciata</p>
 
-            <div className="product-price-row">
-              <span className="current-price">₹449</span>
-              <span className="old-price">₹599</span>
-              <span className="discount-badge">25% OFF</span>
-            </div>
+
 
             <p className="product-short-desc">
               The Snake Plant is a hardy, low-maintenance indoor plant known for its tall, sword-like leaves and air-purifying qualities. Perfect for homes, offices, and beginners!

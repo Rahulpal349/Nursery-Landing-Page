@@ -77,11 +77,6 @@ const plants = [
   }
 ];
 
-const renderStars = (rating) => {
-  return Array.from({ length: 5 }).map((_, index) => (
-    <span key={index} className={index < rating ? "star filled" : "star"}>★</span>
-  ));
-};
 
 const PlantGallery = ({ limit, showViewMore }) => {
   const [filter, setFilter] = useState('all');
@@ -121,12 +116,7 @@ const PlantGallery = ({ limit, showViewMore }) => {
               <div className="plant-content">
                 <h3 className="plant-name">{plant.name}</h3>
                 
-                <div className="plant-meta">
-                  <span className="plant-price">{plant.price}</span>
-                  <div className="plant-rating">
-                    {renderStars(plant.rating)}
-                  </div>
-                </div>
+
 
                 <button className="btn btn-primary buy-btn">Buy Now</button>
               </div>

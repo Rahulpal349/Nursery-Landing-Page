@@ -72,9 +72,7 @@ const Navbar = () => {
               <li><Link to="/" className={isActive('/') ? 'active-link' : ''} onClick={toggleMenu}>Home</Link></li>
               <li><Link to="/plants" className={isActive('/plants') ? 'active-link' : ''} onClick={toggleMenu}>Our Plants</Link></li>
               <li><Link to="/about" className={isActive('/about') ? 'active-link' : ''} onClick={toggleMenu}>About Us</Link></li>
-              <li><a href="#services" onClick={toggleMenu}>Services</a></li>
-              <li><a href="#gallery" onClick={toggleMenu}>Gallery</a></li>
-              <li><a href="#blog" onClick={toggleMenu}>Blog</a></li>
+
               <li><a href="#contact" onClick={toggleMenu}>Contact Us</a></li>
             </ul>
 
@@ -87,22 +85,7 @@ const Navbar = () => {
                 </svg>
               </button>
               
-              <button aria-label="Cart" className="icon-circle-btn cart-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="9" cy="21" r="1"></circle>
-                  <circle cx="20" cy="21" r="1"></circle>
-                  <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-                <span className="cart-badge">0</span>
-              </button>
 
-              <button className="primary-btn get-in-touch">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z" />
-                  <path d="M12 22V12" />
-                </svg>
-                Get in Touch
-              </button>
             </div>
 
             {/* Mobile Menu Toggle */}
