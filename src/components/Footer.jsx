@@ -8,10 +8,10 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-brand">
-            <a href="#" className="logo">
-              <span className="logo-icon">🌿</span>
-              <span className="logo-text bengali-text" style={{ color: '#fff' }}>সৃজনী নার্সারি</span>
-            </a>
+            <Link to="/" className="logo">
+              <span className="logo-text serif-heading" style={{ color: '#fff' }}>Srijoni</span>
+              <span className="logo-dot" style={{ color: 'var(--primary-green)' }}>.</span>
+            </Link>
             <p>Cultivating nature's beauty and promoting environmental sustainability through every plant we nurture.</p>
           </div>
           <div className="footer-links">
@@ -24,9 +24,9 @@ const Footer = () => {
           </div>
           <div className="footer-contact">
             <h4>Contact Info</h4>
-            <p>📍 সৃজনী নার্সারি</p>
+            <p>📍 Srijoni Nursery</p>
             <p>📞 +917384934653</p>
-            <p>✉️ sayantan@srijoninursery.com</p>
+            <p>✉️ sayantan@gmail.com</p>
           </div>
           <div className="footer-hours">
             <h4>Visiting Hours</h4>

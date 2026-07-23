@@ -1,6 +1,6 @@
 .about {
   padding: 100px 0;
-  background: var(--white);
+  background: var(--light-bg);
 }
 
 .about-content {
@@ -14,7 +14,7 @@
   display: inline-block;
   font-size: 14px;
   font-weight: 600;
-  color: var(--accent-red);
+  color: var(--primary-green);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin-bottom: 16px;
@@ -22,13 +22,14 @@
 
 .about-text h2 {
   font-size: clamp(32px, 5vw, 44px);
-  color: var(--primary-green);
+  color: var(--dark);
   margin-bottom: 24px;
+  font-family: 'Playfair Display', serif;
 }
 
 .about-text .lead {
   font-size: 18px;
-  color: var(--text);
+  color: var(--dark);
   font-weight: 500;
   margin-bottom: 20px;
   line-height: 1.6;
@@ -51,7 +52,7 @@
   align-items: center;
   gap: 10px;
   font-weight: 600;
-  color: var(--secondary-green);
+  color: var(--dark);
 }
 
 .feature-icon {
@@ -67,31 +68,6 @@
   border-radius: var(--border-radius-lg);
   overflow: hidden;
   box-shadow: var(--shadow-lg);
-}
-
-/* Indian inspired border treatment */
-.image-frame::before {
-  content: '';
-  position: absolute;
-  top: -15px;
-  right: -15px;
-  width: 100%;
-  height: 100%;
-  border: 4px solid var(--accent-yellow);
-  border-radius: var(--border-radius-lg);
-  z-index: -1;
-}
-
-.image-frame::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: -15px;
-  width: 100%;
-  height: 100%;
-  border: 4px solid var(--accent-red);
-  border-radius: var(--border-radius-lg);
-  z-index: -2;
 }
 
 .image-frame img {

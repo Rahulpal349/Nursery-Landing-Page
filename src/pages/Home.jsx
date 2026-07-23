@@ -1,14 +1,12 @@
 import React from 'react';
-import HeroSlider from '../components/HeroSlider';
+import Hero from '../components/Hero';
 import PlantGallery from '../components/PlantGallery';
-import Contact from '../components/Contact';
 
 const Home = () => {
   return (
     <div className="page">
-      <HeroSlider />
+      <Hero />
       <PlantGallery limit={4} showViewMore={true} />
-      <Contact />
     </div>
   );
 };
