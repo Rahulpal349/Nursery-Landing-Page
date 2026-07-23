@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './PlantGallery.css';
 
 const plants = [
@@ -92,26 +93,31 @@ const plants = [
   }
 ];
 
-const PlantGallery = () => {
+const PlantGallery = ({ limit, showViewMore }) => {
   const [filter, setFilter] = useState('all');
 
-  const filteredPlants = filter === 'all' ? plants : plants.filter(p => p.category === filter);
+  let filteredPlants = filter === 'all' ? plants : plants.filter(p => p.category === filter);
+  if (limit) {
+    filteredPlants = filteredPlants.slice(0, limit);
+  }
 
   return (
     <section id="plants" className="plant-gallery">
       <div className="container">
         <div className="section-header">
-          <h2 className="section-title">Our Plant Collection</h2>
+          <h2 className="section-title">{limit ? 'Featured Plants' : 'Our Plant Collection'}</h2>
           <p className="section-subtitle">Handpicked varieties rooted in Indian tradition</p>
         </div>
 
-        <div className="filter-buttons">
-          <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All</button>
-          <button className={`filter-btn ${filter === 'indoor' ? 'active' : ''}`} onClick={() => setFilter('indoor')}>Indoor</button>
-          <button className={`filter-btn ${filter === 'outdoor' ? 'active' : ''}`} onClick={() => setFilter('outdoor')}>Outdoor</button>
-          <button className={`filter-btn ${filter === 'flowering' ? 'active' : ''}`} onClick={() => setFilter('flowering')}>Flowering</button>
-          <button className={`filter-btn ${filter === 'sacred' ? 'active' : ''}`} onClick={() => setFilter('sacred')}>Sacred & Useful</button>
-        </div>
+        {!limit && (
+          <div className="filter-buttons">
+            <button className={`filter-btn ${filter === 'all' ? 'active' : ''}`} onClick={() => setFilter('all')}>All</button>
+            <button className={`filter-btn ${filter === 'indoor' ? 'active' : ''}`} onClick={() => setFilter('indoor')}>Indoor</button>
+            <button className={`filter-btn ${filter === 'outdoor' ? 'active' : ''}`} onClick={() => setFilter('outdoor')}>Outdoor</button>
+            <button className={`filter-btn ${filter === 'flowering' ? 'active' : ''}`} onClick={() => setFilter('flowering')}>Flowering</button>
+            <button className={`filter-btn ${filter === 'sacred' ? 'active' : ''}`} onClick={() => setFilter('sacred')}>Sacred & Useful</button>
+          </div>
+        )}
         
         <div className="plants-grid">
           {filteredPlants.map(plant => (
@@ -133,6 +139,12 @@ const PlantGallery = () => {
             </article>
           ))}
         </div>
+
+        {showViewMore && (
+          <div style={{ textAlign: 'center', marginTop: '50px' }}>
+            <Link to="/plants" className="btn btn-primary">View More Plants</Link>
+          </div>
+        )}
       </div>
     </section>
   );

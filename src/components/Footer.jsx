@@ -25,7 +25,7 @@ const Footer = () => {
           <div className="footer-contact">
             <h4>Contact Info</h4>
             <p>📍 সৃজনী নার্সারি</p>
-            <p>📞 +91 12345 67890</p>
+            <p>📞 +917384934653</p>
             <p>✉️ sayantan@srijoninursery.com</p>
           </div>
           <div className="footer-hours">

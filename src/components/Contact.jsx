@@ -24,7 +24,7 @@ const Contact = () => {
               <div className="info-icon">📞</div>
               <h3>Contact Us</h3>
               <p>Have questions about a plant or need care advice? We're here to help.</p>
-              <p style={{ marginTop: '16px', fontWeight: 'bold' }}>Phone: +91 12345 67890</p>
+              <p style={{ marginTop: '16px', fontWeight: 'bold' }}>Phone: +917384934653</p>
             </div>
           </div>
           

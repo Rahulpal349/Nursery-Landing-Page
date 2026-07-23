@@ -46,7 +46,7 @@
 }
 
 .contact-map {
-  min-height: 400px;
+  min-height: 250px;
   background: #eee; /* placeholder while loading */
 }
 
@@ -55,6 +55,6 @@
       grid-template-columns: 1fr;
   }
   .contact-map {
-      min-height: 300px;
+      min-height: 200px;
   }
 }
