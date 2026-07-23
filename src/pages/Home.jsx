@@ -1,12 +1,20 @@
 import React from 'react';
 import Hero from '../components/Hero';
-import PlantGallery from '../components/PlantGallery';
+import Features from '../components/Features';
+import PlantCollection from '../components/PlantCollection';
+import AboutStats from '../components/AboutStats';
+import Testimonials from '../components/Testimonials';
+import Newsletter from '../components/Newsletter';
 
 const Home = () => {
   return (
-    <div className="page">
+    <div className="home-page">
       <Hero />
-      <PlantGallery limit={4} showViewMore={true} />
+      <Features />
+      <PlantCollection />
+      <AboutStats />
+      <Testimonials />
+      <Newsletter />
     </div>
   );
 };
