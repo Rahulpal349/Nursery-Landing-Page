@@ -1,38 +1,37 @@
 .admin-layout {
   display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background-color: #f4f6f8;
   font-family: 'Poppins', sans-serif;
 }
 
+.admin-body {
+  display: flex;
+  flex: 1;
+}
+
 /* Sidebar */
 .admin-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  width: 250px;
   background-color: #0c140f;
   color: #fff;
   transition: width 0.3s ease;
-  z-index: 1000;
   overflow-y: auto;
-}
-
-.admin-sidebar.open {
-  width: 250px;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .admin-sidebar.closed {
   width: 0;
   overflow: hidden;
+  border-right: none;
 }
 
 .admin-logo {
-  padding: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 0 10px;
 }
 
 .admin-logo img {
@@ -75,15 +74,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  transition: margin-left 0.3s ease;
-}
-
-.admin-main.sidebar-open {
-  margin-left: 250px;
-}
-
-.admin-main.sidebar-closed {
-  margin-left: 0;
+  min-width: 0;
 }
 
 /* Topbar */
@@ -94,10 +85,17 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 24px;
+  padding: 0 24px 0 16px;
   position: sticky;
   top: 0;
   z-index: 999;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 .menu-toggle {
@@ -194,4 +192,37 @@
 .admin-content-area {
   padding: 30px;
   flex: 1;
+}
+
+@media (max-width: 768px) {
+  .admin-sidebar {
+    position: fixed;
+    top: 70px;
+    left: -250px;
+    height: calc(100vh - 70px);
+    width: 250px;
+    z-index: 1000;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .admin-sidebar.open {
+    left: 0;
+  }
+  
+  .admin-sidebar.closed {
+    width: 250px;
+    left: -250px;
+  }
+  
+  .topbar-nursery-info {
+    display: none;
+  }
+  
+  .admin-content-area {
+    padding: 16px;
+  }
+  
+  .admin-profile span {
+    display: none;
+  }
 }

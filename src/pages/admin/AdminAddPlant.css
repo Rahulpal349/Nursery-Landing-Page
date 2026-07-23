@@ -368,6 +368,10 @@ input:checked + .slider:before {
     grid-template-columns: 1fr;
   }
   
+  .form-card {
+    padding: 20px;
+  }
+  
   .form-actions {
     flex-direction: column;
   }

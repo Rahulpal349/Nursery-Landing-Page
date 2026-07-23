@@ -101,3 +101,12 @@
   transform: translateY(-2px);
   box-shadow: 0 4px 15px rgba(118, 184, 82, 0.3);
 }
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+  .login-header h2 {
+    font-size: 24px;
+  }
+}

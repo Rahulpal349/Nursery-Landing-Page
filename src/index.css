@@ -131,3 +131,22 @@ ul {
     max-width: 600px;
     margin: 0 auto;
 }
+
+/* Mobile Typography & Spacing Overrides */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    .section-header {
+        margin-bottom: 30px;
+    }
+    .section-title {
+        font-size: clamp(28px, 6vw, 36px);
+    }
+    .container {
+        padding: 0 16px;
+    }
+    .btn {
+        padding: 10px 24px;
+    }
+}
