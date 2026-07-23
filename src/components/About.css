@@ -1,83 +1,185 @@
-.about {
-  padding: 100px 0;
-  background: var(--light-bg);
+.about-hero-section {
+  position: relative;
+  background-color: var(--white);
+  min-height: 85vh;
+  display: flex;
+  align-items: stretch;
+  overflow: hidden;
 }
 
-.about-content {
+.about-hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
-  align-items: center;
-}
-
-.section-label {
-  display: inline-block;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--primary-green);
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  margin-bottom: 16px;
-}
-
-.about-text h2 {
-  font-size: clamp(32px, 5vw, 44px);
-  color: var(--dark);
-  margin-bottom: 24px;
-  font-family: 'Playfair Display', serif;
-}
-
-.about-text .lead {
-  font-size: 18px;
-  color: var(--dark);
-  font-weight: 500;
-  margin-bottom: 20px;
-  line-height: 1.6;
-}
-
-.about-text p {
-  color: var(--text-light);
-  margin-bottom: 16px;
-}
-
-.about-features {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 24px;
-  margin-top: 32px;
-}
-
-.feature {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-weight: 600;
-  color: var(--dark);
-}
-
-.feature-icon {
-  font-size: 24px;
-}
-
-.about-image {
-  position: relative;
-}
-
-.image-frame {
-  position: relative;
-  border-radius: var(--border-radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-.image-frame img {
   width: 100%;
-  height: auto;
-  border-radius: var(--border-radius-lg);
 }
 
-@media (max-width: 900px) {
-  .about-content {
-      grid-template-columns: 1fr;
+/* Left Content Side */
+.about-hero-content {
+  padding: 80px 60px 100px 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  background: var(--white);
+}
+
+.about-hero-header {
+  margin-bottom: 30px;
+}
+
+.about-hero-header h1 {
+  font-size: 56px;
+  color: #1a2b22;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 5px;
+}
+
+.title-leaf {
+  color: var(--primary-green);
+}
+
+.about-subtitle {
+  font-family: 'Playfair Display', cursive, serif;
+  font-size: 24px;
+  color: #556b5f;
+  font-style: italic;
+  margin: 0;
+}
+
+.about-intro {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #333;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.about-intro strong {
+  color: #1a2b22;
+  font-weight: 600;
+}
+
+.about-bullets {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  max-width: 550px;
+}
+
+.bullet-item {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.bullet-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #f4f6f1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.bullet-item p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #556b5f;
+  margin: 0;
+  padding-top: 5px;
+}
+
+.bullet-item strong {
+  color: #1a2b22;
+  font-weight: 600;
+}
+
+/* Right Image Side */
+.about-hero-image-side {
+  position: relative;
+  height: 100%;
+}
+
+.image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.profile-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* Brush stroke effect using a gradient mask approximation */
+.soft-edge-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 150px;
+  background: linear-gradient(to right, var(--white) 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+}
+
+/* Wooden Sign Overlay */
+.wooden-sign {
+  position: absolute;
+  bottom: 80px;
+  right: 10%;
+  background: #6b4c3a; /* Wood color */
+  background-image: linear-gradient(to right, #6b4c3a, #5c4132);
+  padding: 20px 30px;
+  border-radius: 8px;
+  color: #fdfdfd;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  border: 1px solid #7d5e4b;
+  transform: rotate(-2deg);
+}
+
+.wooden-sign .cursive-text {
+  font-family: 'Playfair Display', cursive, serif;
+  font-style: italic;
+  font-size: 28px;
+  margin: 0 0 10px 0;
+  color: #f4f6f1;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+  padding-bottom: 10px;
+}
+
+.wooden-sign p {
+  font-size: 14px;
+  margin: 0;
+  line-height: 1.4;
+  color: #d8c8bd;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 1024px) {
+  .about-hero-container {
+    grid-template-columns: 1fr;
+  }
+  
+  .about-hero-content {
+    padding: 60px 30px;
+  }
+  
+  .about-hero-image-side {
+    height: 600px;
+  }
+  
+  .soft-edge-overlay {
+    background: linear-gradient(to bottom, var(--white) 0%, rgba(255,255,255,0) 100%);
+    width: 100%;
+    height: 150px;
   }
 }
