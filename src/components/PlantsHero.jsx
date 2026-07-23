@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './PlantsHero.css';
+import plantsHeroBg from '../assets/plants_hero.jpg';
 
 const PlantsHero = () => {
   return (
-    <section className="plants-hero-section">
-      <div className="plants-hero-bg"></div>
+    <section className="plants-hero-section" style={{ backgroundImage: `url(${plantsHeroBg})` }}>
+      <div className="plants-hero-gradient-overlay"></div>
       <div className="container plants-hero-container">
         
         <div className="plants-hero-content">

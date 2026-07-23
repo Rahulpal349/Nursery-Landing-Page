@@ -37,15 +37,7 @@ const PlantFeatures = () => {
             </div>
           </div>
 
-          <div className="feature-item">
-            <div className="feature-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22v-7l-3-3m6 0l-3 3M12 15a4 4 0 0 0-4-4V7a4 4 0 0 1 8 0v4a4 4 0 0 0-4 4z"></path><path d="M3 15h18"></path></svg>
-            </div>
-            <div className="feature-text">
-              <h4>Expert Support</h4>
-              <p>Guidance for plant care whenever you need.</p>
-            </div>
-          </div>
+
 
           <div className="feature-item">
             <div className="feature-icon">

@@ -118,7 +118,7 @@ const PlantGallery = ({ limit, showViewMore }) => {
                 
 
 
-                <button className="btn btn-primary buy-btn">Buy Now</button>
+
               </div>
             </article>
           ))}

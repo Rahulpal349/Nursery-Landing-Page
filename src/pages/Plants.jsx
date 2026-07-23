@@ -3,7 +3,7 @@ import PlantsHero from '../components/PlantsHero';
 import PlantCategories from '../components/PlantCategories';
 import PlantGrid from '../components/PlantGrid';
 import PlantFeatures from '../components/PlantFeatures';
-import PlantCTA from '../components/PlantCTA';
+
 
 const Plants = () => {
   return (
@@ -12,7 +12,7 @@ const Plants = () => {
       <PlantCategories />
       <PlantGrid />
       <PlantFeatures />
-      <PlantCTA />
+
     </div>
   );
 };
