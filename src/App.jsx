@@ -1,5 +1,5 @@
 import React from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './pages/Home';
@@ -32,6 +32,7 @@ function App() {
           <Route path="/admin" element={<ProtectedRoute />}>
             <Route element={<AdminLayout />}>
               <Route index element={<AdminDashboard />} />
+              <Route path="plants" element={<Navigate to="new" replace />} />
               <Route path="plants/new" element={<AdminAddPlant />} />
               {/* Add more admin routes here later like /admin/plants */}
             </Route>
