@@ -2,41 +2,48 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './PlantCollection.css';
 
+import indoorImg from '../assets/indoor.png';
+import outdoorImg from '../assets/outdoor.png';
+import floweringImg from '../assets/flowering.png';
+import airPurifyingImg from '../assets/air_purifying.png';
+import succulentsImg from '../assets/succulents.png';
+import herbalImg from '../assets/herbal.png';
+
 const collections = [
   {
     id: 1,
     title: 'Indoor Plants',
-    image: 'https://images.unsplash.com/photo-1477554193778-9562c28588c0?auto=format&fit=crop&w=400&q=80',
+    image: indoorImg,
     link: '/plants?category=indoor'
   },
   {
     id: 2,
     title: 'Outdoor Plants',
-    image: 'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&w=400&q=80',
+    image: outdoorImg,
     link: '/plants?category=outdoor'
   },
   {
     id: 3,
     title: 'Flowering Plants',
-    image: 'https://images.unsplash.com/photo-1508022057371-4f937727e447?auto=format&fit=crop&w=400&q=80',
+    image: floweringImg,
     link: '/plants?category=flowering'
   },
   {
     id: 4,
     title: 'Succulents & Cacti',
-    image: 'https://images.unsplash.com/photo-1459156212016-c812468e2115?auto=format&fit=crop&w=400&q=80',
+    image: succulentsImg,
     link: '/plants?category=succulents'
   },
   {
     id: 5,
     title: 'Herbal Plants',
-    image: 'https://images.unsplash.com/photo-1595180425712-4eb2e3919e1c?auto=format&fit=crop&w=400&q=80',
+    image: herbalImg,
     link: '/plants?category=herbal'
   },
   {
     id: 6,
     title: 'Air Purifying Plants',
-    image: 'https://images.unsplash.com/photo-1599320294139-4dffeb3de9d6?auto=format&fit=crop&w=400&q=80',
+    image: airPurifyingImg,
     link: '/plants?category=air-purifying'
   }
 ];
