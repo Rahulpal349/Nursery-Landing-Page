@@ -9,13 +9,14 @@
 
 .about-hero-container {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   width: 100%;
+  flex: 1;
 }
 
 /* Left Content Side */
 .about-hero-content {
-  padding: 80px 60px 100px 10%;
+  padding: 160px 60px 100px 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,26 +26,29 @@
 }
 
 .about-hero-header {
-  margin-bottom: 30px;
+  margin-bottom: 25px;
 }
 
 .about-hero-header h1 {
-  font-size: 56px;
+  font-size: 64px;
   color: #1a2b22;
   display: flex;
   align-items: center;
   gap: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
+  line-height: 1.1;
 }
 
 .title-leaf {
   color: var(--primary-green);
+  width: 45px;
+  height: 45px;
 }
 
 .about-subtitle {
   font-family: 'Playfair Display', cursive, serif;
-  font-size: 24px;
-  color: #556b5f;
+  font-size: 32px;
+  color: var(--primary-green);
   font-style: italic;
   margin: 0;
 }
@@ -103,10 +107,13 @@
 .about-hero-image-side {
   position: relative;
   height: 100%;
+  min-height: 100%;
 }
 
 .image-wrapper {
-  position: relative;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
 }
@@ -122,10 +129,10 @@
 .soft-edge-overlay {
   position: absolute;
   top: 0;
-  left: 0;
+  left: -2px;
   height: 100%;
-  width: 150px;
-  background: linear-gradient(to right, var(--white) 0%, rgba(255,255,255,0) 100%);
+  width: 250px;
+  background: linear-gradient(to right, var(--white) 0%, rgba(255,255,255,0.9) 20%, rgba(255,255,255,0) 100%);
   pointer-events: none;
 }
 

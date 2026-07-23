@@ -1,0 +1,150 @@
+.product-tabs-section {
+  padding: 40px 0;
+  background-color: #fdfdfd;
+}
+
+.tabs-container {
+  display: grid;
+  grid-template-columns: 250px 1fr 300px;
+  gap: 40px;
+  border-top: 1px solid #e0e6e2;
+  border-bottom: 1px solid #e0e6e2;
+  padding: 40px 0;
+}
+
+/* Left Tabs Menu */
+.tabs-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: transparent;
+  border: none;
+  padding: 12px 20px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #556b5f;
+  text-align: left;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.tab-btn:hover {
+  background-color: #f4f6f1;
+  color: #1a2b22;
+}
+
+.tab-btn.active {
+  background-color: rgba(118, 184, 82, 0.1);
+  color: #1a2b22;
+}
+
+.tab-icon {
+  display: flex;
+  align-items: center;
+  color: #88998f;
+}
+
+.tab-btn.active .tab-icon {
+  color: var(--primary-green);
+}
+
+/* Middle Content */
+.tab-content {
+  padding: 0 20px;
+}
+
+.tab-title {
+  font-size: 24px;
+  color: #1a2b22;
+  margin: 0 0 20px 0;
+}
+
+.tab-content p {
+  font-size: 15px;
+  line-height: 1.7;
+  color: #556b5f;
+  margin-bottom: 20px;
+}
+
+/* Right Box */
+.benefits-box {
+  background-color: #eef2eb; /* light green */
+  border-radius: 12px;
+  padding: 30px 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.benefits-title {
+  font-size: 16px;
+  color: #1a2b22;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.benefits-list li svg {
+  color: var(--primary-green);
+}
+
+.bg-leaf {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: 1;
+}
+
+@media (max-width: 1024px) {
+  .tabs-container {
+    grid-template-columns: 200px 1fr;
+  }
+  
+  .benefits-box {
+    grid-column: 1 / -1;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .tabs-container {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  
+  .tabs-menu {
+    flex-direction: row;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  
+  .tab-btn {
+    white-space: nowrap;
+  }
+}

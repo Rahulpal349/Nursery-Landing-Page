@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import ownerImage from '../assets/owner.jpg';
 
 const About = () => {
   return (
@@ -50,7 +51,7 @@ const About = () => {
         <div className="about-hero-image-side">
           <div className="image-wrapper">
             <img 
-              src="https://images.unsplash.com/photo-1596766099307-2ebdd4c23db1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+              src={ownerImage} 
               alt="Sayantan Das - B.Sc. Agriculture Student" 
               className="profile-img"
             />
