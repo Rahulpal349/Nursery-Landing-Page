@@ -156,6 +156,20 @@
 
 @media (max-width: 480px) {
   .products-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .product-name {
+    font-size: 12px;
+  }
+  .product-price {
+    font-size: 13px;
+  }
+  .product-details {
+    padding: 10px;
+  }
+  .badge-new {
+    font-size: 9px;
+    padding: 3px 6px;
   }
 }
