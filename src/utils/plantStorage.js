@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'srijoni_nursery_plants_v7';
+const STORAGE_KEY = 'srijoni_nursery_plants_v8';
 
 // Default plant (Snake Plant) to show initially
 const defaultPlants = [
@@ -14,13 +14,9 @@ const defaultPlants = [
     discount: '25% OFF',
     shortDescription: 'The Snake Plant is a hardy, low-maintenance indoor plant known for its tall, sword-like leaves and air-purifying qualities. Perfect for homes, offices, and beginners!',
     tagline: 'Purify your air naturally.',
-    image: 'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+    image: '/images/plants/snake_plant.jpg',
     thumbnails: [
-      'https://images.unsplash.com/photo-1599320294139-4dffeb3de9d6?auto=format&fit=crop&w=400&q=80',
-      'https://images.unsplash.com/photo-1593696954577-ab3d39317b97?auto=format&fit=crop&w=400&q=80',
-      'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=400&q=80',
-      'https://images.unsplash.com/photo-1595180425712-4eb2e3919e1c?auto=format&fit=crop&w=400&q=80',
-      'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&w=400&q=80'
+      '/images/plants/snake_plant.jpg'
     ],
     careInstructions: 'The Snake Plant (Sansevieria trifasciata) is one of the most popular indoor plants, loved for its striking appearance and exceptional resilience. It purifies the air by removing toxins and produces oxygen, making it ideal for bedrooms, living rooms, and workspaces. Its upright leaves with green and yellow patterns add a touch of elegance to any space.',
     soilType: 'Well-draining potting mix.',
