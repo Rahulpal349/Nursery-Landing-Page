@@ -49,7 +49,7 @@ const AboutMission = () => {
                       <path d="M13 13 Q19 13 20.5 7 Q16 7 13 13 Z" />
                     </svg>
                   </div>
-                  <h3>500+</h3>
+                  <h3>100+</h3>
                 </div>
                 <p>Varieties of Plants</p>
               </div>
@@ -66,7 +66,7 @@ const AboutMission = () => {
                       <path d="M12 12C8.5 12 5.5 14.5 5.5 18.5V21h13v-2.5C18.5 14.5 15.5 12 12 12Z" stroke="#fdfdfd" strokeWidth="1.5" />
                     </svg>
                   </div>
-                  <h3>2000+</h3>
+                  <h3>500+</h3>
                 </div>
                 <p>Happy Customers</p>
               </div>

@@ -230,4 +230,9 @@
     height: 100%;
     min-height: 60px;
   }
+  
+  .tagline-line,
+  .tagline-icon {
+    display: none;
+  }
 }
