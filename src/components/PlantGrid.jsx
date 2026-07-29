@@ -45,12 +45,6 @@ const PlantGrid = () => {
           ))}
         </div>
 
-        <div className="view-more-container">
-          <button className="view-more-btn">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
-            View More Plants
-          </button>
-        </div>
 
       </div>
     </section>
