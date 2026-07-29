@@ -40,10 +40,11 @@
 }
 
 .feature-text h4 {
-  font-size: 16px;
+  font-size: 18px;
   color: #333;
   margin: 0 0 4px 0;
-  font-weight: 600;
+  font-weight: 700;
+  font-family: 'Playfair Display', serif;
 }
 
 .feature-text p {

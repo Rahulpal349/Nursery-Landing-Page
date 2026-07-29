@@ -1,5 +1,9 @@
 .footer-premium {
-  background-color: #0c140f; /* Very dark nature green */
+  background-color: #0c140f; /* Fallback */
+  background-image: url('/footer-bg.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   color: #e0e6e2;
   padding: 60px 0 20px;
   font-family: 'Poppins', sans-serif;

@@ -20,13 +20,7 @@ const Newsletter = () => {
             </button>
           </form>
 
-          {/* Decorative Leaves */}
-          <div className="leaf-decor left-decor">
-            <img src="https://images.unsplash.com/photo-1596547609652-9cb5d8d8ceb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Plant Decoration" />
-          </div>
-          <div className="leaf-decor right-decor">
-            <img src="https://images.unsplash.com/photo-1596547609652-9cb5d8d8ceb3?ixlib=rb-4.0.3&auto=format&fit=crop&w=300&q=80" alt="Plant Decoration" />
-          </div>
+          {/* Background image is now handled in CSS */}
 
         </div>
       </div>

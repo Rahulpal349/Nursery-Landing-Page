@@ -3,7 +3,7 @@ import Hero from '../components/Hero';
 import Features from '../components/Features';
 import PlantCollection from '../components/PlantCollection';
 import AboutStats from '../components/AboutStats';
-import Testimonials from '../components/Testimonials';
+
 import Newsletter from '../components/Newsletter';
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
       <Features />
       <PlantCollection />
       <AboutStats />
-      <Testimonials />
+
       <Newsletter />
     </div>
   );

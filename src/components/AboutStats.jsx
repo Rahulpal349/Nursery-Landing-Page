@@ -27,11 +27,6 @@ const AboutStats = () => {
                 Know More About Us
               </Link>
             </div>
-            
-            {/* Background Image / Overlay for the left box */}
-            <div className="about-bg-image" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80')" }}>
-              <div className="bg-gradient-overlay"></div>
-            </div>
           </div>
 
           {/* Right Light Green Box (Stats) */}
@@ -39,25 +34,34 @@ const AboutStats = () => {
             <div className="stats-grid">
               
               <div className="stat-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary-green)" className="stat-icon"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
-                <h3>500+</h3>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#3b6641" className="stat-icon">
+                  <path d="M12 2C16 6 16 18 12 22C8 18 8 6 12 2Z"/>
+                </svg>
+                <h3>100+</h3>
                 <p>Varieties of Plants</p>
               </div>
 
               <div className="stat-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary-green)" className="stat-icon"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
-                <h3>2000+</h3>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#3b6641" className="stat-icon">
+                  <path d="M11 2A10 10 0 0 0 11 22C12 16 12 8 11 2Z"/>
+                  <path d="M13 2A10 10 0 0 1 13 22C12 16 12 8 13 2Z"/>
+                </svg>
+                <h3>500+</h3>
                 <p>Happy Customers</p>
               </div>
 
               <div className="stat-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary-green)" className="stat-icon"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#3b6641" className="stat-icon">
+                  <path d="M12 2C16 6 16 18 12 22C8 18 8 6 12 2Z"/>
+                </svg>
                 <h3>5+</h3>
                 <p>Years of Experience</p>
               </div>
 
               <div className="stat-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary-green)" className="stat-icon"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="#3b6641" className="stat-icon">
+                  <path fillRule="evenodd" clipRule="evenodd" d="M12 0A12 12 0 1 0 12 24A12 12 0 1 0 12 0ZM12 3C16 7 16 17 12 21C8 17 8 7 12 3Z"/>
+                </svg>
                 <h3>100%</h3>
                 <p>Organic & Natural</p>
               </div>
