@@ -14,9 +14,6 @@ const PlantsHero = () => {
             Our <span className="text-highlight-green">Plants</span>
           </h1>
           
-          <div className="hero-leaf-separator">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary-green)"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z" strokeLinecap="round" strokeLinejoin="round"/><path d="M12 22V12" strokeLinecap="round" strokeLinejoin="round"/></svg>
-          </div>
 
           <p className="plants-hero-desc">
             Explore a wide variety of healthy, high-quality plants<br/>
