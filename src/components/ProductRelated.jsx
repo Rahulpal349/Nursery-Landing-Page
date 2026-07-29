@@ -1,12 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './ProductRelated.css';
 
 const relatedPlants = [
-  { id: 1, name: 'ZZ Plant', price: '₹499', image: 'https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&w=400&q=80' },
-  { id: 2, name: 'Peace Lily', price: '₹499', image: 'https://images.unsplash.com/photo-1595180425712-4eb2e3919e1c?auto=format&fit=crop&w=400&q=80' },
-  { id: 3, name: 'Aloe Vera', price: '₹299', image: 'https://images.unsplash.com/photo-1555393081-377038f40776?auto=format&fit=crop&w=400&q=80' },
-  { id: 4, name: 'Pothos (Money Plant)', price: '₹199', image: 'https://images.unsplash.com/photo-1601985705806-5b9a71f6004f?auto=format&fit=crop&w=400&q=80' },
-  { id: 5, name: 'Areca Palm', price: '₹599', image: 'https://images.unsplash.com/photo-1599320294139-4dffeb3de9d6?auto=format&fit=crop&w=400&q=80' },
+  { id: 'zz-plant', name: 'ZZ Plant', price: '499', image: 'https://images.unsplash.com/photo-1632207691143-643e2a9a9361?auto=format&fit=crop&w=400&q=80' },
+  { id: 'peace-lily', name: 'Peace Lily', price: '499', image: 'https://images.unsplash.com/photo-1595180425712-4eb2e3919e1c?auto=format&fit=crop&w=400&q=80' },
+  { id: 'aloe-vera', name: 'Aloe Vera', price: '299', image: 'https://images.unsplash.com/photo-1555393081-377038f40776?auto=format&fit=crop&w=400&q=80' },
+  { id: 'pothos', name: 'Pothos (Money Plant)', price: '199', image: 'https://images.unsplash.com/photo-1601985705806-5b9a71f6004f?auto=format&fit=crop&w=400&q=80' },
+  { id: 'areca-palm', name: 'Areca Palm', price: '599', image: 'https://images.unsplash.com/photo-1599320294139-4dffeb3de9d6?auto=format&fit=crop&w=400&q=80' },
 ];
 
 const ProductRelated = () => {
@@ -28,14 +29,15 @@ const ProductRelated = () => {
           <div className="related-grid">
             {relatedPlants.map(plant => (
               <div className="related-card" key={plant.id}>
-                <div className="rel-img-wrapper">
-                  <img src={plant.image} alt={plant.name} />
-                </div>
-                <div className="rel-details">
-                  <div className="rel-info">
-                    <h3 className="rel-name">{plant.name}</h3>
+                <Link to={`/product/${plant.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                  <div className="rel-img-wrapper">
+                    <img src={plant.image} alt={plant.name} />
                   </div>
-
+                </Link>
+                <div className="rel-details" style={{justifyContent: 'center', textAlign: 'center'}}>
+                  <div className="rel-info">
+                    <h3 className="rel-name" style={{fontSize: '15px'}}>{plant.name}</h3>
+                  </div>
                 </div>
               </div>
             ))}

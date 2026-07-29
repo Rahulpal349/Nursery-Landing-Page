@@ -1,21 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ProductDetails.css';
 
-const ProductDetails = () => {
-  const [quantity, setQuantity] = useState(1);
-  const [selectedPot, setSelectedPot] = useState('Plastic Pot');
-  const [selectedSize, setSelectedSize] = useState('Small (4-6 inch)');
-  const [activeImage, setActiveImage] = useState('https://images.unsplash.com/photo-1599320294139-4dffeb3de9d6?auto=format&fit=crop&w=800&q=80');
+const ProductDetails = ({ plant }) => {
+  const [activeImage, setActiveImage] = useState(plant.image);
 
-  // Snake plant images placeholder
-  const thumbnails = [
-    'https://images.unsplash.com/photo-1599320294139-4dffeb3de9d6?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1593696954577-ab3d39317b97?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1597848212624-a19eb35e2651?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1595180425712-4eb2e3919e1c?auto=format&fit=crop&w=400&q=80',
-    'https://images.unsplash.com/photo-1584589167171-541ce45f1eea?auto=format&fit=crop&w=400&q=80'
-  ];
+  useEffect(() => {
+    setActiveImage(plant.image);
+  }, [plant]);
+
+  const handleBuyNow = () => {
+    const phoneNumber = "917384934653"; // The number from the footer
+    const message = `Hi, I am interested in buying the ${plant.name}. Could you please provide more details?`;
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(whatsappUrl, '_blank');
+  };
 
   return (
     <section className="product-details-section">
@@ -31,7 +30,7 @@ const ProductDetails = () => {
           <span className="separator">&gt;</span>
           <Link to="/plants">Indoor Plants</Link>
           <span className="separator">&gt;</span>
-          <span className="current">Snake Plant</span>
+          <span className="current">{plant.name}</span>
         </div>
 
         <div className="product-main-grid">
@@ -43,42 +42,23 @@ const ProductDetails = () => {
               <button className="zoom-btn">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
               </button>
-              <img src={activeImage} alt="Snake Plant" />
+              <img src={activeImage || 'https://images.unsplash.com/photo-1599320294139-4dffeb3de9d6?auto=format&fit=crop&w=800&q=80'} alt={plant.name} />
             </div>
-
-            <div className="thumbnail-slider">
-              <button className="thumb-nav-btn prev">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-              </button>
-              <div className="thumbnails-container">
-                {thumbnails.map((thumb, index) => (
-                  <div 
-                    key={index} 
-                    className={`thumb-item ${activeImage === thumb ? 'active' : ''}`}
-                    onClick={() => setActiveImage(thumb)}
-                  >
-                    <img src={thumb} alt={`Thumbnail ${index + 1}`} />
-                  </div>
-                ))}
-              </div>
-              <button className="thumb-nav-btn next">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-              </button>
-            </div>
+            {/* Removed thumbnail slider as requested (single image is enough) */}
           </div>
 
           {/* Right: Info */}
           <div className="product-info-col">
             <h1 className="product-title serif-heading">
-              Snake Plant
+              {plant.name}
               <svg width="24" height="24" viewBox="0 0 24 24" fill="var(--primary-green)"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/></svg>
             </h1>
-            <p className="product-scientific">Sansevieria trifasciata</p>
+            {plant.scientificName && <p className="product-scientific">{plant.scientificName}</p>}
 
-
+            {/* Price section removed as requested */}
 
             <p className="product-short-desc">
-              The Snake Plant is a hardy, low-maintenance indoor plant known for its tall, sword-like leaves and air-purifying qualities. Perfect for homes, offices, and beginners!
+              {plant.shortDescription}
             </p>
 
             <div className="product-features-row">
@@ -104,39 +84,15 @@ const ProductDetails = () => {
               </div>
             </div>
 
-            <div className="product-options">
-              <div className="option-group">
-                <h4>Select Pot Type</h4>
-                <div className="option-buttons">
-                  {['Plastic Pot', 'Ceramic Pot', 'Terracotta Pot', 'Decorative Pot'].map(pot => (
-                    <button 
-                      key={pot} 
-                      className={`opt-btn ${selectedPot === pot ? 'active' : ''}`}
-                      onClick={() => setSelectedPot(pot)}
-                    >
-                      {pot}
-                    </button>
-                  ))}
-                </div>
-              </div>
+            {/* Pot Type and Size selection removed as requested */}
 
-              <div className="option-group">
-                <h4>Select Size</h4>
-                <div className="option-buttons">
-                  {['Small (4-6 inch)', 'Medium (6-8 inch)', 'Large (8-10 inch)'].map(size => (
-                    <button 
-                      key={size} 
-                      className={`opt-btn ${selectedSize === size ? 'active' : ''}`}
-                      onClick={() => setSelectedSize(size)}
-                    >
-                      {size}
-                    </button>
-                  ))}
-                </div>
-              </div>
+            <div className="product-actions-row">
+              {/* Quantity selector and Add to Cart removed as requested */}
+              <button className="buy-now-btn" style={{flex: 1, backgroundColor: '#4a7536', color: 'white', padding: '15px 0'}} onClick={handleBuyNow}>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" style={{marginRight: '8px'}}><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.888-.788-1.487-1.761-1.66-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.8 5.8 0 0 0-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z"></path></svg>
+                Buy via WhatsApp
+              </button>
             </div>
-
-
 
             <div className="trust-badges">
               <div className="badge-item">

@@ -107,6 +107,25 @@
   gap: 5px;
 }
 
+.rel-icon-btn {
+  background: transparent;
+  border: none;
+  color: #88998f;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.rel-icon-btn:hover {
+  background: rgba(118, 184, 82, 0.1);
+  color: var(--primary-green);
+}
+
 @media (max-width: 1200px) {
   .related-grid {
     grid-template-columns: repeat(4, 1fr);

@@ -1,8 +1,62 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { addPlant } from '../../utils/plantStorage';
 import './AdminAddPlant.css';
 
 const AdminAddPlant = () => {
+  const navigate = useNavigate();
+  
+  const [formData, setFormData] = useState({
+    name: '',
+    sku: '',
+    scientificName: '',
+    commonName: '',
+    category: '',
+    price: '',
+    shortDescription: '',
+    tagline: '',
+    image: '',
+    careInstructions: '',
+    soilType: '',
+    wateringFrequency: '',
+    sunlightRequirement: '',
+    temperatureRangeMin: '',
+    temperatureRangeMax: '',
+    growthRate: '',
+    specialFeatures: '',
+    isAvailable: true
+  });
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: type === 'checkbox' ? checked : value
+    }));
+  };
+
+  const handlePublish = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.category || !formData.shortDescription || !formData.careInstructions) {
+      alert('Please fill out all required fields (*)');
+      return;
+    }
+
+    const temperatureRange = formData.temperatureRangeMin && formData.temperatureRangeMax 
+      ? `${formData.temperatureRangeMin} - ${formData.temperatureRangeMax}`
+      : '';
+
+    const newPlantData = {
+      ...formData,
+      temperatureRange,
+    };
+
+    const newId = addPlant(newPlantData);
+    alert(`Plant added successfully! ID: ${newId}`);
+    // Redirect to the new product page
+    navigate(`/product/${newId}`);
+  };
+
   return (
     <div className="admin-add-plant">
       {/* Page Header */}
@@ -39,25 +93,25 @@ const AdminAddPlant = () => {
           <div className="form-grid-2">
             <div className="form-group">
               <label>Plant Name <span className="required">*</span></label>
-              <input type="text" placeholder="Enter plant name" />
+              <input type="text" name="name" value={formData.name} onChange={handleChange} placeholder="Enter plant name" />
             </div>
             <div className="form-group">
               <label>SKU (Optional)</label>
-              <input type="text" placeholder="Enter SKU or leave blank" />
+              <input type="text" name="sku" value={formData.sku} onChange={handleChange} placeholder="Enter SKU or leave blank" />
             </div>
             
             <div className="form-group">
               <label>Scientific Name</label>
-              <input type="text" placeholder="Enter scientific name (optional)" />
+              <input type="text" name="scientificName" value={formData.scientificName} onChange={handleChange} placeholder="Enter scientific name (optional)" />
             </div>
             <div className="form-group">
               <label>Common Name (Optional)</label>
-              <input type="text" placeholder="Enter common name" />
+              <input type="text" name="commonName" value={formData.commonName} onChange={handleChange} placeholder="Enter common name" />
             </div>
             
             <div className="form-group">
               <label>Category <span className="required">*</span></label>
-              <select>
+              <select name="category" value={formData.category} onChange={handleChange}>
                 <option value="">Select category</option>
                 <option value="indoor">Indoor Plants</option>
                 <option value="outdoor">Outdoor Plants</option>
@@ -65,22 +119,18 @@ const AdminAddPlant = () => {
                 <option value="flowering">Flowering</option>
               </select>
             </div>
-            <div className="form-group">
-              <label>Price (₹) <span className="required">*</span></label>
-              <input type="number" placeholder="Enter price" />
-            </div>
           </div>
 
           <div className="form-grid-2">
             <div className="form-group">
               <label>Short Description <span className="required">*</span></label>
-              <textarea placeholder="Enter short description about the plant" rows="3"></textarea>
-              <div className="char-count">0/150</div>
+              <textarea name="shortDescription" value={formData.shortDescription} onChange={handleChange} placeholder="Enter short description about the plant" rows="3"></textarea>
+              <div className="char-count">{formData.shortDescription.length}/150</div>
             </div>
             <div className="form-group">
               <label>Tagline (Optional)</label>
-              <textarea placeholder="A short catchy tagline (optional)" rows="3"></textarea>
-              <div className="char-count">0/100</div>
+              <textarea name="tagline" value={formData.tagline} onChange={handleChange} placeholder="A short catchy tagline (optional)" rows="3"></textarea>
+              <div className="char-count">{formData.tagline.length}/100</div>
             </div>
           </div>
         </div>
@@ -88,22 +138,18 @@ const AdminAddPlant = () => {
         {/* 2. Plant Images */}
         <div className="form-section">
           <h3>2. Plant Images</h3>
-          <p className="section-desc">Upload high-quality images of the plant</p>
+          <p className="section-desc">Provide an image URL for the plant</p>
           
-          <div className="image-upload-area">
-            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#a0aec0" strokeWidth="1.5">
-              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-              <polyline points="17 8 12 3 7 8"></polyline>
-              <line x1="12" y1="3" x2="12" y2="15"></line>
-            </svg>
-            <p>Drag & drop images here</p>
-            <span className="or-text">or</span>
-            <button className="btn-browse">Browse Files</button>
+          <div className="form-group" style={{maxWidth: '500px'}}>
+            <label>Image URL</label>
+            <input type="text" name="image" value={formData.image} onChange={handleChange} placeholder="https://example.com/plant.jpg" />
           </div>
-          <div className="upload-footer">
-            <span>You can upload up to 5 images. Recommended size: 1200x1200px</span>
-            <span>0 / 5</span>
-          </div>
+          {formData.image && (
+            <div style={{marginTop: '15px'}}>
+              <p style={{fontSize: '13px', color: '#556b5f', marginBottom: '5px'}}>Preview:</p>
+              <img src={formData.image} alt="Preview" style={{width: '100px', height: '100px', objectFit: 'cover', borderRadius: '8px'}} />
+            </div>
+          )}
         </div>
 
         {/* 3. Plant Details */}
@@ -113,14 +159,14 @@ const AdminAddPlant = () => {
           <div className="form-grid-2 align-top">
             <div className="form-group">
               <label>Plant Care Instructions <span className="required">*</span></label>
-              <textarea placeholder="Enter care instructions for this plant" rows="5"></textarea>
-              <div className="char-count">0/1000</div>
+              <textarea name="careInstructions" value={formData.careInstructions} onChange={handleChange} placeholder="Enter care instructions for this plant" rows="5"></textarea>
+              <div className="char-count">{formData.careInstructions.length}/1000</div>
             </div>
             
             <div className="form-grid-1 gap-4">
               <div className="form-group">
                 <label>Soil Type</label>
-                <select>
+                <select name="soilType" value={formData.soilType} onChange={handleChange}>
                   <option value="">Select soil type</option>
                   <option value="well-draining">Well-draining</option>
                   <option value="moist">Moist but well-drained</option>
@@ -130,7 +176,7 @@ const AdminAddPlant = () => {
               </div>
               <div className="form-group">
                 <label>Watering Frequency</label>
-                <select>
+                <select name="wateringFrequency" value={formData.wateringFrequency} onChange={handleChange}>
                   <option value="">Select watering frequency</option>
                   <option value="daily">Daily</option>
                   <option value="twice-week">Twice a week</option>
@@ -144,7 +190,7 @@ const AdminAddPlant = () => {
           <div className="form-grid-2">
             <div className="form-group">
               <label>Sunlight Requirement</label>
-              <select>
+              <select name="sunlightRequirement" value={formData.sunlightRequirement} onChange={handleChange}>
                 <option value="">Select sunlight requirement</option>
                 <option value="full-sun">Full Sun</option>
                 <option value="partial-sun">Partial Sun / Partial Shade</option>
@@ -156,15 +202,15 @@ const AdminAddPlant = () => {
             <div className="form-group">
               <label>Temperature Range (°C)</label>
               <div className="range-inputs">
-                <input type="number" placeholder="Min °C" />
+                <input type="number" name="temperatureRangeMin" value={formData.temperatureRangeMin} onChange={handleChange} placeholder="Min °C" />
                 <span className="range-separator">-</span>
-                <input type="number" placeholder="Max °C" />
+                <input type="number" name="temperatureRangeMax" value={formData.temperatureRangeMax} onChange={handleChange} placeholder="Max °C" />
               </div>
             </div>
             
             <div className="form-group">
               <label>Growth Rate</label>
-              <select>
+              <select name="growthRate" value={formData.growthRate} onChange={handleChange}>
                 <option value="">Select growth rate</option>
                 <option value="slow">Slow</option>
                 <option value="moderate">Moderate</option>
@@ -174,8 +220,8 @@ const AdminAddPlant = () => {
             
             <div className="form-group" style={{gridColumn: '1 / -1'}}>
               <label>Special Features (Optional)</label>
-              <input type="text" placeholder="Highlight special features of this plant" />
-              <div className="char-count" style={{textAlign: 'right'}}>0/300</div>
+              <input type="text" name="specialFeatures" value={formData.specialFeatures} onChange={handleChange} placeholder="Highlight special features of this plant (comma separated)" />
+              <div className="char-count" style={{textAlign: 'right'}}>{formData.specialFeatures.length}/300</div>
             </div>
           </div>
         </div>
@@ -186,7 +232,7 @@ const AdminAddPlant = () => {
           
           <div className="availability-toggle">
             <label className="switch">
-              <input type="checkbox" defaultChecked />
+              <input type="checkbox" name="isAvailable" checked={formData.isAvailable} onChange={handleChange} />
               <span className="slider round"></span>
             </label>
             <div className="toggle-text">
@@ -198,9 +244,9 @@ const AdminAddPlant = () => {
 
         {/* Action Buttons */}
         <div className="form-actions">
-          <button className="btn-cancel">Cancel</button>
+          <button className="btn-cancel" onClick={() => navigate('/admin/plants')}>Cancel</button>
           <button className="btn-draft">Save as Draft</button>
-          <button className="btn-publish">Publish Plant</button>
+          <button className="btn-publish" onClick={handlePublish}>Publish Plant</button>
         </div>
       </div>
     </div>

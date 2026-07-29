@@ -1,7 +1,7 @@
 import React from 'react';
 import './ProductCareGuide.css';
 
-const ProductCareGuide = () => {
+const ProductCareGuide = ({ plant }) => {
   return (
     <section className="product-care-guide-section">
       <div className="container">
@@ -19,7 +19,7 @@ const ProductCareGuide = () => {
             </div>
             <div className="care-text">
               <h4>Light</h4>
-              <p>Thrives in low to bright indirect light. Can tolerate low light conditions.</p>
+              <p>{plant.sunlightRequirement || 'Thrives in low to bright indirect light.'}</p>
             </div>
           </div>
 
@@ -29,7 +29,7 @@ const ProductCareGuide = () => {
             </div>
             <div className="care-text">
               <h4>Water</h4>
-              <p>Water sparingly. Allow soil to dry completely between waterings.</p>
+              <p>{plant.wateringFrequency || 'Water sparingly. Allow soil to dry completely.'}</p>
             </div>
           </div>
 
@@ -39,7 +39,7 @@ const ProductCareGuide = () => {
             </div>
             <div className="care-text">
               <h4>Temperature</h4>
-              <p>Best grows in 18°C to 30°C. Keep away from cold drafts and extreme heat.</p>
+              <p>{plant.temperatureRange ? `${plant.temperatureRange}°C` : '18°C to 30°C. Keep away from drafts.'}</p>
             </div>
           </div>
 
@@ -49,7 +49,7 @@ const ProductCareGuide = () => {
             </div>
             <div className="care-text">
               <h4>Soil</h4>
-              <p>Well-draining soil mix with sand or perlite for best results.</p>
+              <p>{plant.soilType || 'Well-draining soil mix.'}</p>
             </div>
           </div>
 
@@ -58,8 +58,8 @@ const ProductCareGuide = () => {
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" strokeWidth="1.5"><rect x="7" y="3" width="10" height="18" rx="2" ry="2"></rect><line x1="7" y1="7" x2="17" y2="7"></line><line x1="7" y1="17" x2="17" y2="17"></line></svg>
             </div>
             <div className="care-text">
-              <h4>Fertilizer</h4>
-              <p>Feed once a month during growing season (spring and summer).</p>
+              <h4>Growth Rate</h4>
+              <p>{plant.growthRate || 'Moderate'}</p>
             </div>
           </div>
 
