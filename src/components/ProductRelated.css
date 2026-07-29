@@ -158,11 +158,11 @@
   }
   
   .carousel-nav-btn.prev {
-    left: -15px;
+    left: -5px;
   }
   
   .carousel-nav-btn.next {
-    right: -15px;
+    right: -5px;
   }
   
   .related-grid {
@@ -175,9 +175,10 @@
 
 @media (max-width: 480px) {
   .related-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
   }
-  .related-card:nth-child(2) {
+  .related-card:nth-child(3) {
     display: none;
   }
 }

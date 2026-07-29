@@ -5,6 +5,7 @@
 
 .product-breadcrumb {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
   font-size: 13px;
@@ -437,6 +438,15 @@
     flex-direction: column;
     gap: 10px;
   }
+  
+  .benefits-list {
+    grid-template-columns: 1fr;
+  }
+
+  .care-guide-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
 }
 
 /* Care Guide */
@@ -491,7 +501,12 @@
 
 @media (max-width: 500px) {
   .care-guide-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .product-features-row {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 15px;
   }
 }

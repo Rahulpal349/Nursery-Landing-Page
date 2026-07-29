@@ -64,7 +64,7 @@ const Navbar = () => {
             
             {/* Left: Logo */}
             <Link to="/" className="nav-logo" onClick={() => setIsOpen(false)}>
-              <img src="/logo_green.png" alt="Srijoni Nursery" style={{ height: '70px', objectFit: 'contain' }} />
+              <img src="/logo_green.png" alt="Srijoni Nursery" className="nav-logo-img" />
             </Link>
             
             {/* Center: Links */}
