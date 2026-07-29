@@ -154,20 +154,32 @@
 
 @media (max-width: 600px) {
   .about-box-content {
-    padding: 40px 20px;
-    background: linear-gradient(90deg, #111a14 70%, transparent 100%);
+    padding: 30px 20px;
+    background: transparent;
   }
   
   .about-title {
-    font-size: 32px;
+    font-size: 28px;
   }
   
   .stats-box {
-    padding: 40px 20px;
+    padding: 30px 20px;
   }
   
   .stats-grid {
     grid-template-columns: 1fr;
-    gap: 30px;
+    gap: 0;
+  }
+
+  .stat-item:nth-child(1),
+  .stat-item:nth-child(2),
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) {
+    border-right: none;
+    border-bottom: 1px solid rgba(59, 102, 65, 0.15);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
   }
 }
