@@ -144,6 +144,60 @@
   flex-shrink: 0;
 }
 
+/* About / Benefits Box */
+.product-about-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.benefits-box {
+  background-color: #eef2eb; /* light green */
+  border-radius: 12px;
+  padding: 30px 25px;
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.benefits-title {
+  font-size: 16px;
+  color: #1a2b22;
+  margin: 0 0 20px 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.benefits-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  position: relative;
+  z-index: 2;
+}
+
+.benefits-list li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+.benefits-list li svg {
+  color: var(--primary-green);
+}
+
+.bg-leaf {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  z-index: 1;
+}
 /* Right: Info */
 .product-info-col {
   display: flex;
@@ -222,14 +276,16 @@
 }
 
 .pd-feature h4 {
-  font-size: 12px;
+  font-size: 14px;
+  font-weight: 600;
   color: #1a2b22;
-  margin: 0 0 4px 0;
+  margin: 0 0 6px 0;
 }
 
 .pd-feature p {
-  font-size: 10px;
-  color: #777;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #556b5f;
   margin: 0;
 }
 
@@ -380,5 +436,62 @@
   .trust-badges {
     flex-direction: column;
     gap: 10px;
+  }
+}
+
+/* Care Guide */
+.product-care-guide-section {
+  background-color: transparent;
+}
+
+.care-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+}
+
+.care-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  position: relative;
+}
+
+.care-icon {
+  width: 40px;
+  height: 40px;
+  flex-shrink: 0;
+  background-color: #f4f6f1;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.care-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.care-text h4 {
+  font-size: 11px;
+  color: #1a2b22;
+  margin: 0;
+  font-weight: 700;
+}
+
+.care-text p {
+  font-size: 10px;
+  line-height: 1.3;
+  color: #556b5f;
+  margin: 0;
+}
+
+@media (max-width: 500px) {
+  .care-guide-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }

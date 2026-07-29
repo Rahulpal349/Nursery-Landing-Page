@@ -1,10 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ProductDetails from '../components/ProductDetails';
-import ProductTabs from '../components/ProductTabs';
-import ProductCareGuide from '../components/ProductCareGuide';
 import ProductRelated from '../components/ProductRelated';
-import Newsletter from '../components/Newsletter';
 import { getPlantById } from '../utils/plantStorage';
 
 const ProductPage = () => {
@@ -30,10 +27,7 @@ const ProductPage = () => {
   return (
     <div className="product-page" style={{ paddingTop: '80px', backgroundColor: '#fdfdfd' }}>
       <ProductDetails plant={plant} />
-      <ProductTabs plant={plant} />
-      <ProductCareGuide plant={plant} />
       <ProductRelated />
-      <Newsletter />
     </div>
   );
 };
