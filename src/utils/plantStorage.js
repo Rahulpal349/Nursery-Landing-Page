@@ -1,4 +1,4 @@
-const STORAGE_KEY = 'srijoni_nursery_plants_v6';
+const STORAGE_KEY = 'srijoni_nursery_plants_v7';
 
 // Default plant (Snake Plant) to show initially
 const defaultPlants = [
@@ -312,6 +312,46 @@ const defaultPlants = [
       'Low maintenance',
       'Long-lasting foliage',
       'Perfect for homes and offices'
+    ]
+  },
+  {
+    id: 'money-plant',
+    name: 'Money Plant',
+    sku: 'MNY-001',
+    scientificName: 'Epipremnum aureum',
+    commonName: 'Money Plant',
+    category: 'indoor',
+    price: 199,
+    originalPrice: 299,
+    discount: 'Best Seller',
+    shortDescription: 'A popular indoor plant loved for its heart-shaped green leaves and trailing vines.',
+    tagline: 'Prosperity and positive energy.',
+    image: 'https://images.unsplash.com/photo-1601985705806-5b9a71f6004f?auto=format&fit=crop&w=400&q=80',
+    thumbnails: [
+      'https://images.unsplash.com/photo-1601985705806-5b9a71f6004f?auto=format&fit=crop&w=400&q=80'
+    ],
+    careInstructions: 'The Money Plant (Epipremnum aureum) is one of the most popular indoor plants, loved for its heart-shaped green leaves and trailing vines. It is believed to symbolize prosperity, good luck, and positive energy, making it a favorite choice for homes and offices.\n\nBesides its decorative appeal, the Money Plant is an excellent natural air purifier that helps remove indoor pollutants and improves air quality. Its low-maintenance nature and ability to thrive in both soil and water make it an ideal plant for beginners and experienced gardeners alike.\n\nWhether displayed in hanging baskets, tabletop pots, shelves, or balconies, the Money Plant adds a fresh and vibrant touch to any space.',
+    soilType: 'Use a well-draining, nutrient-rich potting mix containing compost and coco peat for healthy growth.',
+    wateringFrequency: 'Water when the top 1–2 inches of soil become dry. If grown in water, replace the water every 7–10 days.',
+    sunlightRequirement: 'Prefers bright, indirect sunlight but can also tolerate low-light conditions. Avoid prolonged exposure to direct afternoon sunlight.',
+    temperatureRange: '18 - 30',
+    growthRate: 'Fast',
+    specialFeatures: 'Air Purifying, Water Propagation',
+    isAvailable: true,
+    keyFeatures: [
+      { iconType: 'air', title: 'Excellent Air Purifier', description: 'Helps remove indoor toxins and improves air quality.' },
+      { iconType: 'maintenance', title: 'Easy to Grow', description: 'Thrives with minimal care and adapts to various environments.' },
+      { iconType: 'maintenance', title: 'Grows in Water or Soil', description: 'Can be grown hydroponically or in a regular pot.' },
+      { iconType: 'wellbeing', title: 'Decorative Indoor Vine', description: 'Beautiful trailing vines enhance home and office décor.' }
+    ],
+    benefits: [
+      'Symbol of prosperity and good fortune',
+      'Beginner-friendly and low maintenance',
+      'Purifies indoor air naturally',
+      'Can grow in both water and soil',
+      'Perfect for homes, offices, and balconies',
+      'Attractive cascading vines',
+      'Ideal for tabletops, shelves, and hanging planters'
     ]
   }
 ];

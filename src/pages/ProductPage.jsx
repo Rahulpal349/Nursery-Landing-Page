@@ -27,7 +27,7 @@ const ProductPage = () => {
   return (
     <div className="product-page" style={{ paddingTop: '80px', backgroundColor: '#fdfdfd' }}>
       <ProductDetails plant={plant} />
-      <ProductRelated />
+      <ProductRelated currentPlantId={plant.id} />
     </div>
   );
 };
