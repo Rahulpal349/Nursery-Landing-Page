@@ -17,6 +17,20 @@ const Contact = () => {
               <h3 className="serif-heading">Location</h3>
               <p className="serif-heading" style={{ fontSize: '1.2rem', marginBottom: '8px' }}>Srijoni Nursery</p>
               <p>We are located at the heart of the community. Use the map to find us!</p>
+              
+              <div className="mobile-card-map">
+                <iframe 
+                  src="https://maps.google.com/maps?q=22.118061,88.1102486&hl=en&z=15&output=embed" 
+                  width="100%" 
+                  height="150" 
+                  style={{ border: 0, borderRadius: '8px', marginTop: '15px' }} 
+                  allowFullScreen="" 
+                  loading="lazy" 
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Srijoni Nursery Location Mobile">
+                </iframe>
+              </div>
+
               <a href="https://www.google.com/maps/place/%E0%A6%B8%E0%A7%83%E0%A6%9C%E0%A6%A8%E0%A7%80+%E0%A6%A8%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A6%BF/@22.117839,88.1093455,18z/data=!4m11!1m4!7m3!1m1!1s113753421053000119624!2e2!3m5!1s0x3a02f71bf1f0cfcf:0x5e5cbc645e5b59cb!8m2!3d22.118061!4d88.1102486!16s%2Fg%2F11k4yq8_d5?entry=ttu" target="_blank" rel="noopener noreferrer" className="btn btn-secondary" style={{ marginTop: '16px' }}>Open in Google Maps</a>
             </div>
             

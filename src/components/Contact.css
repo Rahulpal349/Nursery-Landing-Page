@@ -56,7 +56,11 @@
 
 .contact-map {
   min-height: 250px;
-  background: #eee; /* placeholder while loading */
+  background: #eee;
+}
+
+.mobile-card-map {
+  display: none;
 }
 
 @media (max-width: 900px) {
@@ -64,6 +68,9 @@
       grid-template-columns: 1fr;
   }
   .contact-map {
-      min-height: 200px;
+      display: none;
+  }
+  .mobile-card-map {
+      display: block;
   }
 }
