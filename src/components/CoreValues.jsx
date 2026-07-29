@@ -25,14 +25,6 @@ const CoreValues = () => {
 
           <div className="value-item">
             <div className="value-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22v-7l-3-3m6 0l-3 3M12 15a4 4 0 0 0-4-4V7a4 4 0 0 1 8 0v4a4 4 0 0 0-4 4z"></path><path d="M3 15h18"></path></svg>
-            </div>
-            <h4>Our Values</h4>
-            <p>Sustainability, honesty, hard work, and love for nature.</p>
-          </div>
-
-          <div className="value-item">
-            <div className="value-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--primary-green)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22C12 22 20 18 20 12C20 6 12 2 12 2C12 2 4 6 4 12C4 18 12 22 12 22Z"/><path d="M12 22V12"/></svg>
             </div>
             <h4>What We Do</h4>
