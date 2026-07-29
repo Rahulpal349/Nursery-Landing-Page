@@ -150,11 +150,20 @@
     gap: 30px;
     justify-content: center;
   }
+
+  .mission-stat-item:not(:last-child) {
+    border-right: none;
+  }
+
+  .mission-stat-item, .mission-stat-item:first-child, .mission-stat-item:last-child {
+    padding: 0;
+    align-items: center;
+  }
 }
 
 @media (max-width: 500px) {
-  .collage-images {
-    height: 350px;
+  .collage-wrapper {
+    height: 250px;
   }
   
   .mission-title {
@@ -163,6 +172,7 @@
   
   .mission-stats {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: center;
+    gap: 40px;
   }
 }
