@@ -1,16 +1,26 @@
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { getPlants } from '../utils/plantStorage';
 import './PlantGrid.css';
 
 const PlantGrid = () => {
   const [plants, setPlants] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     // Fetch plants from localStorage when the component mounts
     const allPlants = getPlants();
     setPlants(allPlants);
   }, []);
+
+  const searchParams = new URLSearchParams(location.search);
+  const searchQuery = searchParams.get('search')?.toLowerCase() || '';
+
+  const filteredPlants = plants.filter(plant => 
+    plant.name.toLowerCase().includes(searchQuery) ||
+    plant.shortDescription?.toLowerCase().includes(searchQuery) ||
+    plant.category?.toLowerCase().includes(searchQuery)
+  );
 
   return (
     <section className="plant-grid-section">
@@ -26,7 +36,7 @@ const PlantGrid = () => {
         </div>
 
         <div className="products-grid">
-          {plants.map(plant => (
+          {filteredPlants.length > 0 ? filteredPlants.map(plant => (
             <div className="product-card" key={plant.id}>
               <Link to={`/product/${plant.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                 <div className="product-img-wrapper">
@@ -40,7 +50,12 @@ const PlantGrid = () => {
                 </div>
               </div>
             </div>
-          ))}
+          )) : (
+            <div style={{ gridColumn: '1 / -1', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '40px' }}>
+              <h3 style={{ marginBottom: '20px' }}>No plants found matching "{searchParams.get('search')}"</h3>
+              <Link to="/plants" className="primary-btn" style={{ display: 'inline-flex', width: 'auto' }}>View All Plants</Link>
+            </div>
+          )}
         </div>
 
       </div>
