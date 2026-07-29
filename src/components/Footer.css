@@ -286,6 +286,10 @@
 }
 
 @media (max-width: 600px) {
+  .footer-premium {
+    background-image: url('/footer-bg-mobile.png'); /* The user will need to save this image */
+  }
+
   .footer-grid {
     grid-template-columns: 1fr;
   }
